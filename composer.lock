@@ -1,0 +1,71 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "2bc99179280c0b175038da9b4259edd4",
+    "packages": [
+        {
+            "name": "phpforge/application",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpforge/application.git",
+                "reference": "cd71b31e7dbe4735238096eb36b1ed2dec9a11d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpforge/application/zipball/cd71b31e7dbe4735238096eb36b1ed2dec9a11d0",
+                "reference": "cd71b31e7dbe4735238096eb36b1ed2dec9a11d0",
+                "shasum": ""
+            },
+            "require": {
+                "phpforge/http": "0.0.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Forge": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "phpforge application",
+            "time": "2015-10-15 11:55:01"
+        },
+        {
+            "name": "phpforge/http",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpforge/http.git",
+                "reference": "479ed32fe713ef0079d9f0c50fdfcddf773178cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpforge/http/zipball/479ed32fe713ef0079d9f0c50fdfcddf773178cd",
+                "reference": "479ed32fe713ef0079d9f0c50fdfcddf773178cd",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Forge": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Forge Http",
+            "time": "2015-07-05 01:41:33"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.3.3"
+    },
+    "platform-dev": []
+}

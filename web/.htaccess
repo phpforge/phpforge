@@ -1,0 +1,26 @@
+DirectoryIndex index.php
+RewriteEngine On
+
+
+
+# RewriteCond %{} ^/country_name$ [NC]
+
+# RewriteRule ^themes/(.*)$ ../themes/$1 [NC,L]
+# RewriteCond $1 ^themes\/
+# RewriteRule ^(.*) /var/www/sites/devforge.io/themes [L,PT]
+#RedirectMatch ^/themes(.*)$ /store/
+
+
+
+
+# LogLevel debug rewrite_module:debug
+# RewriteLog "/var/log/apache2/rewrite.log"
+# RewriteLogLevel 9
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+
+# RewriteCond %{REQUEST_URI} !^themes.*$
+# RewriteCond $1 !^themes\/
+RewriteRule ^.*$ index.php [NC,L]
