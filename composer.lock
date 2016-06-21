@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2bc99179280c0b175038da9b4259edd4",
+    "hash": "ca054b6c4156234de07064285a98865c",
     "packages": [
         {
             "name": "phpforge/application",
-            "version": "0.0.2",
+            "version": "0.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpforge/application.git",
-                "reference": "cd71b31e7dbe4735238096eb36b1ed2dec9a11d0"
+                "reference": "813b3542def82589128a600de2a2841cb755544e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpforge/application/zipball/cd71b31e7dbe4735238096eb36b1ed2dec9a11d0",
-                "reference": "cd71b31e7dbe4735238096eb36b1ed2dec9a11d0",
+                "url": "https://api.github.com/repos/phpforge/application/zipball/813b3542def82589128a600de2a2841cb755544e",
+                "reference": "813b3542def82589128a600de2a2841cb755544e",
                 "shasum": ""
             },
             "require": {
@@ -30,8 +30,8 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "description": "phpforge application",
-            "time": "2015-10-15 11:55:01"
+            "description": "Forge application",
+            "time": "2016-06-21 11:25:52"
         },
         {
             "name": "phpforge/http",

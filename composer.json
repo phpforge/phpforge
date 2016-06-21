@@ -10,6 +10,6 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php": ">=5.3.3",
-		"phpforge/application": "0.0.2"
+		"phpforge/application": "~0.0.1"
 	}
 }
