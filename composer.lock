@@ -5,19 +5,20 @@
         "This file is @generated automatically"
     ],
     "hash": "ca054b6c4156234de07064285a98865c",
+    "content-hash": "eb949eed21e6ead2e0e2e2732fe1d8b4",
     "packages": [
         {
             "name": "phpforge/application",
-            "version": "0.0.1",
+            "version": "0.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpforge/application.git",
-                "reference": "813b3542def82589128a600de2a2841cb755544e"
+                "reference": "6c874e8f1264bb9f19a222ec31588dd3431b9b42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpforge/application/zipball/813b3542def82589128a600de2a2841cb755544e",
-                "reference": "813b3542def82589128a600de2a2841cb755544e",
+                "url": "https://api.github.com/repos/phpforge/application/zipball/6c874e8f1264bb9f19a222ec31588dd3431b9b42",
+                "reference": "6c874e8f1264bb9f19a222ec31588dd3431b9b42",
                 "shasum": ""
             },
             "require": {
@@ -31,7 +32,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Forge application",
-            "time": "2016-06-21 11:25:52"
+            "time": "2016-09-12 06:18:28"
         },
         {
             "name": "phpforge/http",
