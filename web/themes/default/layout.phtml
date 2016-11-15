@@ -44,10 +44,10 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#"><?php echo $config->name; ?></a>
+					<a class="navbar-brand" href="<?php echo $this->application->getAppUrl(); ?>"><?php echo $config->name; ?></a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					
+					<?php echo getMenu($menus['top']); ?>
 				</div>
 			</div>
 		</nav>
@@ -66,4 +66,82 @@
 			</footer>
 		</div>
 	</body>
-</html>
+</html><?php
+
+function getMenu($menus) {
+	$data = '';
+	sortMenu($menus);
+	foreach ($menus as $menu) {
+		$data .= buildMenu($menu);
+	}
+	return $data;
+}
+
+function buildMenu($menu, $level = 1) {
+	$data = '';
+	if ($level === 1) {
+		$data .= '<ul class="nav navbar-nav ' . ((key_exists('class', $menu)) ? $menu['class'] : '')   . '">';
+	}
+
+	$sub = false;
+	$class = '';
+	if (key_exists('children', $menu) && !empty($menu['children'])) {
+		$sub = true;
+	}
+
+	if ($sub && $level > 1) {
+		$data .= '<li class="dropdown-submenu">';
+	} else if ($sub) {
+		$data .= '<li class="dropdown">';
+		$class = ' class="dropdown-toggle" data-toggle="dropdown"';
+	} else {
+		$data .= '<li>';
+	}
+	$data .= '<a href="' . (isset($menu['uri']) ? $menu['uri'] : '#') . '" ' . $class . '>' . $menu['title'];
+
+	if ($sub) {
+		$data .= ' <b class="caret"></b></a>';
+
+		$sub = false;
+		$subcontent = '';
+		foreach ($menu['children'] as $submenu) {
+			if (key_exists('children', $submenu) && !empty($submenu['children'])) {
+				$sub = true;
+				sortMenu($submenu['children']);
+			}
+			$subcontent .= buildMenu($submenu, $level+1);
+		}
+
+		if ($sub) {
+			$data .= '<ul class="dropdown-menu multi-level">';
+		} else {
+			$data .= '<ul class="dropdown-menu">';
+		}
+		$data .= $subcontent;
+		$data .= '</ul>';
+	} else {
+		$data .= '</a>';
+	}
+
+	$data .= '</li>';
+	if ($level === 1) {
+		$data .= '</ul>';
+	}
+	return $data;
+}
+
+function sortMenu(&$menu) {
+	usort($menu, 'sortGroup');
+}
+
+function sortGroup($a, $b) {
+	$group = strcasecmp(isset($a['group']) ? $a['group'] : 'default', isset($b['group']) ? $b['group'] : 'default');
+	if ($group === 0) {
+		$priority = ((isset($a['priority']) ? $a['priority'] : 1) - (isset($b['priority']) ? $b['priority'] : 1));
+		if ($priority === 0) {
+			return strcasecmp($a['title'], $b['title']);
+		}
+		return $priority;
+	}
+	return $group;
+}
