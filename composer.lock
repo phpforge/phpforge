@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "phpforge/application",
-            "version": "0.0.7",
+            "version": "0.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpforge/application.git",
-                "reference": "9ff168d3148422d9c78118c38def268afae39172"
+                "reference": "47bddd72704dd244da213f3241f14dcd036226a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpforge/application/zipball/9ff168d3148422d9c78118c38def268afae39172",
-                "reference": "9ff168d3148422d9c78118c38def268afae39172",
+                "url": "https://api.github.com/repos/phpforge/application/zipball/47bddd72704dd244da213f3241f14dcd036226a0",
+                "reference": "47bddd72704dd244da213f3241f14dcd036226a0",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Forge application",
-            "time": "2016-11-05 09:03:45"
+            "time": "2016-11-06 08:23:44"
         },
         {
             "name": "phpforge/http",
