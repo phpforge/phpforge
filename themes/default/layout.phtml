@@ -47,7 +47,7 @@
 					<a class="navbar-brand" href="<?php echo $this->application->getAppUrl(); ?>"><?php echo $config->name; ?></a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<?php echo getMenu($menus['top']); ?>
+					<?php echo key_exists('top', $menus) ? getMenu($menus['top']) : ''; ?>
 				</div>
 			</div>
 		</nav>
