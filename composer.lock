@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "784821dc066a0e67ab472f6fea4d9911",
-    "content-hash": "418a15193078a699e02da54c72d001c9",
+    "hash": "47dbb68b7a71943cc678afee7a5429f9",
+    "content-hash": "9ad841e543809b7a239236a48b08def6",
     "packages": [
         {
             "name": "phpforge/application",
-            "version": "0.0.8",
+            "version": "0.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpforge/application.git",
-                "reference": "47bddd72704dd244da213f3241f14dcd036226a0"
+                "reference": "8b27b3584f9e229b70dab9d6f31b402c38afd67f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpforge/application/zipball/47bddd72704dd244da213f3241f14dcd036226a0",
-                "reference": "47bddd72704dd244da213f3241f14dcd036226a0",
+                "url": "https://api.github.com/repos/phpforge/application/zipball/8b27b3584f9e229b70dab9d6f31b402c38afd67f",
+                "reference": "8b27b3584f9e229b70dab9d6f31b402c38afd67f",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Forge application",
-            "time": "2016-11-06 08:23:44"
+            "time": "2016-11-19 08:02:14"
         },
         {
             "name": "phpforge/http",
@@ -64,15 +64,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpforge/module-main.git",
-                "reference": "17e16ec02438e9376b73dfb7f6a83b9a30d75527"
+                "reference": "f7282c788d5636bf129c357cbd3ed86d3a441fc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpforge/module-main/zipball/17e16ec02438e9376b73dfb7f6a83b9a30d75527",
-                "reference": "17e16ec02438e9376b73dfb7f6a83b9a30d75527",
+                "url": "https://api.github.com/repos/phpforge/module-main/zipball/f7282c788d5636bf129c357cbd3ed86d3a441fc3",
+                "reference": "f7282c788d5636bf129c357cbd3ed86d3a441fc3",
                 "shasum": ""
             },
-            "type": "library",
+            "type": "phpforge-module",
             "autoload": {
                 "psr-0": {
                     "Main": "src/"
@@ -80,12 +80,12 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Main Module",
-            "time": "2016-11-09 20:22:00"
+            "time": "2016-11-19 08:48:37"
         }
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
         "phpforge/module-main": 20
     },
