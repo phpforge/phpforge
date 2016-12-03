@@ -10,12 +10,9 @@
 	"require": {
 		"php": ">=5.3.3",
 		"phpforge/application": "~0.0.1",
+		"phpforge/menu": "dev-master",
+		"phpforge/uuid": "dev-master",
 		"phpforge/module-main": "dev-master"
 	},
-	"extra": {
-		"installer-paths": {
-			"modules/{$name}/": ["type:phpforge-module"]
-		}
-	},
-	"zzminimum-stability": "dev"
+	"minimum-stability": "dev"
 }

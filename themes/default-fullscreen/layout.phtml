@@ -38,78 +38,87 @@
 				padding-top: 48px;
 			}
 
-			.navbar-collapse {
-				background-color: #E6E6E6;
-			}
-
-			@media (min-width: 768px) {
-				.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-					margin-left: 0px;
+			@media (min-width: 850px) {
+				.navbar-collapse {
+					background-color: #E6E6E6;
 				}
 			}
 
-			.nav > li > a > span {
-				margin-right: 6px;
+			@media (min-width: 1200px) {
+				.container {
+					width: 100%;
+				}
 			}
 
-			#navbar {
-				position: fixed;
-				width: 100%;
-				z-index: 1000;
+			.navbar-collapse {
+/*				padding-left: 0px;
+				padding-right: 0px;*/
+			}
+
+			.container .content {
+				padding-right: 15px;
+				padding-left: 15px;
 			}
 		</style>
-	</head>
+	</head> 
 	<body>
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-			<div class="container">
+
+		<nav class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom: 0px !important; border-bottom-width: 0px;">
+			<div class="container-fluid">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" style="background-color: maroon;">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="background-color: maroon;">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="<?php echo $this->application->getAppUrl(); ?>" style="background-color: maroon; color: white;"><?php echo $config->name; ?></a>
+					<a class="navbar-brand" href="#" style="background-color: maroon; color: white;"><?php echo $config->name; ?></a>
 				</div>
-			</div>
-		</nav>
-		<div id="navbar" class="navbar-collapse collapse">
-			<div class="container">
-				<ul class="nav navbar-nav ">
-					<?php echo key_exists('navbar', $menus) ? getMenu($menus['navbar']) : ''; ?>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<?php echo key_exists('navbarRight', $menus) ? getMenu($menus['navbarRight']) : ''; ?>
-				</ul>
-			</div>
-		</div>
+				<div id="tnavbar" class="">
 
-		<div class="container">
+				</div><!--/.nav-collapse -->
+			</div><!--/.container-fluid -->
+		</nav>
+<!--		<nav class="navbar navbar-collapse" style="padding-left: 0px !important; padding-right: 0px !important; border-left-width: 0px !important; border-right-width: 0px !important; ">
+			<div class="container-fluid">-->
+				<div id="navbar" class="navbar-collapse collapse">
+					<?php echo key_exists('top', $menus) ? getMenu($menus['top']) : ''; ?>
+					<?php echo key_exists('topRight', $menus) ? getMenu($menus['topRight'], 'right') : ''; ?>
+				</div>
+<!--			</div>
+		</nav>-->
+
+		<div class="container" style="padding-left: 0px; padding-right: 0px;">
+
 			<?php echo $content; ?>
 
 			<hr>
 
 			<footer>
-				<p>©2016 Devforge Inc. All rights reserved</p>
+				<div class="row">
+					<div class="col-lg-12">
+						<p>©2016 Devforge Inc. All rights reserved</p>
+					</div>
+				</div>
 			</footer>
 		</div>
 	</body>
 </html><?php
 
-function getMenu($menus) {
+function getMenu($menus, $orientation='') {
 	$data = '';
 	sortMenu($menus);
 	foreach ($menus as $menu) {
-		$data .= buildMenu($menu);
+		$data .= buildMenu($menu, 1, $orientation);
 	}
 	return $data;
 }
 
-function buildMenu($menu, $level = 1) {
+function buildMenu($menu, $level = 1, $orientation='') {
 	$data = '';
-//	if ($level === 1) {
-//		$data .= '<ul class="nav navbar-nav ' . ((key_exists('class', $menu)) ? $menu['class'] : '')   . '">';
-//	}
+	if ($level === 1) {
+		$data .= '<ul class="nav navbar-nav ' . (($orientation === 'right') ? 'navbar-right' : '') . ((key_exists('class', $menu)) ? $menu['class'] : '') . '">';
+	}
 
 	$sub = false;
 	$class = '';
@@ -118,7 +127,7 @@ function buildMenu($menu, $level = 1) {
 	}
 
 	if ($sub && $level > 1) {
-		$data .= '<li class="dropdown-submenu">';
+		$data .= '<li class="dropdown-submenu ' . (($orientation === 'right') ? 'navbar-right' : '') . '">';
 	} else if ($sub) {
 		$data .= '<li class="dropdown">';
 		$class = ' class="dropdown-toggle" data-toggle="dropdown"';
@@ -137,11 +146,11 @@ function buildMenu($menu, $level = 1) {
 				$sub = true;
 				sortMenu($submenu['children']);
 			}
-			$subcontent .= buildMenu($submenu, $level+1);
+			$subcontent .= buildMenu($submenu, $level+1, $orientation);
 		}
 
 		if ($sub) {
-			$data .= '<ul class="dropdown-menu multi-level">';
+			$data .= '<ul class="dropdown-menu multi-level ' . (($orientation === 'right') ? 'pull-right' : '') . '">';
 		} else {
 			$data .= '<ul class="dropdown-menu">';
 		}
@@ -152,9 +161,9 @@ function buildMenu($menu, $level = 1) {
 	}
 
 	$data .= '</li>';
-//	if ($level === 1) {
-//		$data .= '</ul>';
-//	}
+	if ($level === 1) {
+		$data .= '</ul>';
+	}
 	return $data;
 }
 

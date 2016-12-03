@@ -3,20 +3,7 @@ body {
 }
 
 footer {
-    margin: 0px;
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
-	width: 100%;
-	background-color: #333;
-	color: #FFF;
-	text-align: center;
-}
-
-footer > p {
-	height: 30px;
-	line-height: 30px;
-	margin: 0px;
+    margin: 50px 0;
 }
 
 .title {
@@ -202,25 +189,4 @@ a.anchor {
     position: relative;
     top: -50px;
     visibility: hidden;
-}
-
-body > .container {
-	margin-top: 60px;
-}
-
-@media (min-width: 600px) and (max-width: 766px) {
-
-	.col-sm-6 {
-		width: 50%;
-	}
-
-	.col-sm-4 {
-		width: 33.33333333%;
-	}
-}
-
-@media (max-width: 766px) {
-	body > .container {
-		margin-top: 10px;
-	}
 }

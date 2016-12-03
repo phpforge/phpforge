@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "47dbb68b7a71943cc678afee7a5429f9",
-    "content-hash": "9ad841e543809b7a239236a48b08def6",
+    "hash": "ed9c0b0f8e1fc27283bb2b9b90a5dfae",
+    "content-hash": "ca767767c75cf2b1c89c4ae774416bb3",
     "packages": [
         {
             "name": "phpforge/application",
-            "version": "0.0.12",
+            "version": "0.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpforge/application.git",
-                "reference": "8b27b3584f9e229b70dab9d6f31b402c38afd67f"
+                "reference": "500ea7cc27910de36bcabdc5e91f195da24bc63e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpforge/application/zipball/8b27b3584f9e229b70dab9d6f31b402c38afd67f",
-                "reference": "8b27b3584f9e229b70dab9d6f31b402c38afd67f",
+                "url": "https://api.github.com/repos/phpforge/application/zipball/500ea7cc27910de36bcabdc5e91f195da24bc63e",
+                "reference": "500ea7cc27910de36bcabdc5e91f195da24bc63e",
                 "shasum": ""
             },
             "require": {
@@ -32,7 +32,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Forge application",
-            "time": "2016-11-19 08:02:14"
+            "time": "2016-11-30 22:32:06"
         },
         {
             "name": "phpforge/http",
@@ -59,6 +59,30 @@
             "time": "2015-07-05 01:41:33"
         },
         {
+            "name": "phpforge/menu",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpforge/menu.git",
+                "reference": "66b1583dbef839bbbeff30b1c873b7fb5199d04d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpforge/menu/zipball/66b1583dbef839bbbeff30b1c873b7fb5199d04d",
+                "reference": "66b1583dbef839bbbeff30b1c873b7fb5199d04d",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Forge\\Application\\Menu": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Forge application menus",
+            "time": "2016-11-26 11:36:07"
+        },
+        {
             "name": "phpforge/module-main",
             "version": "dev-master",
             "source": {
@@ -81,12 +105,38 @@
             "notification-url": "https://packagist.org/downloads/",
             "description": "Main Module",
             "time": "2016-11-19 08:48:37"
+        },
+        {
+            "name": "phpforge/uuid",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpforge/uuid.git",
+                "reference": "3e24212b7200eef2c0d000c6bc34a43f3419c55b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpforge/uuid/zipball/3e24212b7200eef2c0d000c6bc34a43f3419c55b",
+                "reference": "3e24212b7200eef2c0d000c6bc34a43f3419c55b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Forge\\Uuid": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Forge UUID",
+            "time": "2016-11-27 09:05:24"
         }
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
+        "phpforge/menu": 20,
+        "phpforge/uuid": 20,
         "phpforge/module-main": 20
     },
     "prefer-stable": false,
