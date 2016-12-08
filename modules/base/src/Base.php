@@ -12,6 +12,7 @@ abstract class Base extends Module {
 	}
 
 	protected function assignRoles() {
+		$this->setRoles(array());
 		if ($this->hasAccount()) {
 			if ($this->account === 'admin') {
 				$this->addRole('admin');
@@ -31,10 +32,7 @@ abstract class Base extends Module {
 	}
 
 	public function getAccount() {
-		if (!$this->account) {
-			$this->account = $this->getSession('account');
-		}
-		return $this->account;
+		return $this->getSession('account');
 	}
 
 	public function hasAccount() {
